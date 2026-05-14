@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RISKON 360 SOLUTIONS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary:#0a2540;
+    --secondary:#1abc9c;
+    --light:#f4f7f9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    text-decoration:none;
+    margin-left:20px;
+    color:var(--primary);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+    z-index:0;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: rgba(10,37,64,0.75);
+    z-index:1;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:20px;
+    padding:12px 30px;
+    background:white;
+    color:var(--primary);
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* SECCIONES */
+section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--primary);
+}
+
+.text{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:1.7;
+}
+
+/* BENEFICIOS */
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.benefit{
+    text-align:center;
+    padding:20px;
+}
+
+/* SERVICIOS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+
+</div>
+
+</section>
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:30px;
+
+}
+
+.foto{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.foto:hover{
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>RISKON</strong></div>
+<div>
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="overlay"></div>
+
+<div class="hero-content">
+<h1>RISKON 360 SOLUTIONS</h1>
+<p>Transformamos la seguridad laboral en una ventaja competitiva</p>
+<a href="#contacto" class="btn">Solicitar asesoría</a>
+</div>
+</section>
+
+<section id="nosotros">
+<h2>¿Quiénes somos?</h2>
+<p class="text">
+Somos especialistas en Seguridad y Salud en el Trabajo, enfocados en proteger vidas y mejorar la productividad empresarial mediante soluciones estratégicas y personalizadas.
+</p>
+</section>
+
+<section>
+<h2>¿Por qué elegirnos?</h2>
+<div class="benefits">
+
+<div class="benefit">
+<h3>✔ Cumplimiento legal</h3>
+<p>Garantizamos que tu empresa cumpla con la normativa SST.</p>
+</div>
+
+<div class="benefit">
+<h3>✔ Reducción de riesgos</h3>
+<p>Disminuimos accidentes laborales y pérdidas económicas.</p>
+</div>
+
+<div class="benefit">
+<h3>✔ Mayor productividad</h3>
+<p>Ambientes seguros generan mejores resultados.</p>
+</div>
+
+</div>
+</section>
+
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Asesoría SST</h3>
+<p>Implementación completa del sistema SST.</p>
+</div>
+
+<div class="card">
+<h3>Capacitación</h3>
+<p>Formación práctica para trabajadores.</p>
+</div>
+
+<div class="card">
+<h3>Acompañamiento</h3>
+<p>Seguimiento continuo.</p>
+</div>
+
+</div>
+</section>
+
+<section id="galeria">
+<h2>Nuestro trabajo en campo</h2>
+
+<div class="grid">
+<img src="imagenes/img1.jpg" class="foto">
+<img src="imagenes/img2.jpg" class="foto">
+<img src="imagenes/img3.jpg" class="foto">
+<img src="imagenes/img4.jpg" class="foto">
+</div>
+
+</section>
+
+
+
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p class="text">
+📞 +57 300 000 0000
+</p>
+</section>
+
+<footer>
+© 2026 RISKON 360 SOLUTIONS
+</footer>
+
+<a href="https://wa.me/573000000000" class="whatsapp">💬</a>
+
+</body>
+</html>
