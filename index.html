@@ -3,43 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RISKON 360 SOLUTIONS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
+
+:root{
     --primary:#0a2540;
     --secondary:#1abc9c;
     --light:#f4f7f9;
+    --white:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:'Poppins',sans-serif;
     background:var(--light);
+    color:#333;
+    scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVBAR */
+
 nav{
     position:fixed;
+    top:0;
     width:100%;
-    padding:15px 40px;
+    padding:18px 50px;
     display:flex;
     justify-content:space-between;
-    background:rgba(255,255,255,0.9);
+    align-items:center;
+    background:rgba(255,255,255,0.95);
     backdrop-filter:blur(10px);
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
     z-index:1000;
 }
 
-nav a{
-    text-decoration:none;
-    margin-left:20px;
+.logo{
+    font-size:24px;
+    font-weight:700;
     color:var(--primary);
 }
 
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:var(--secondary);
+}
+
 /* HERO */
+
 .hero{
     height:100vh;
     position:relative;
@@ -48,6 +82,7 @@ nav a{
     align-items:center;
     text-align:center;
     color:white;
+    overflow:hidden;
 }
 
 .hero::before{
@@ -55,127 +90,201 @@ nav a{
     position:absolute;
     width:100%;
     height:100%;
-    background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
-    z-index:0;
-}
-
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background: rgba(10,37,64,0.75);
-    z-index:1;
+    background:
+    linear-gradient(rgba(10,37,64,0.75),rgba(10,37,64,0.75)),
+    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1974&auto=format&fit=crop')
+    center/cover no-repeat;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-}
-
-.hero h1{
-    font-size:45px;
-}
-
-.hero p{
-    margin-top:10px;
-    font-size:18px;
-}
-
-.btn{
-    margin-top:20px;
-    padding:12px 30px;
-    background:white;
-    color:var(--primary);
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-/* SECCIONES */
-section{
-    padding:80px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:var(--primary);
-}
-
-.text{
     max-width:800px;
-    margin:auto;
-    text-align:center;
-    line-height:1.7;
-}
-
-/* BENEFICIOS */
-.benefits{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.benefit{
-    text-align:center;
     padding:20px;
 }
 
-/* SERVICIOS */
-.grid{
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:var(--secondary);
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#16a085;
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:38px;
+    color:var(--primary);
+}
+
+.section-text{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+/* BENEFITS */
+
+.benefits{
+    margin-top:50px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
 
-</div>
+.benefit{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
 
-</section>
+.benefit:hover{
+    transform:translateY(-10px);
+}
+
+.benefit h3{
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+/* SERVICES */
+
+.services{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
 .card{
     background:white;
-    padding:30px;
-    border-radius:15px;
+    padding:40px 30px;
+    border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:.3s;
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-10px);
 }
 
+.card h3{
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+.card p{
+    line-height:1.7;
+    color:#555;
+}
+
+/* CONTACT */
+
+.contact-box{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    margin-top:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-box p{
+    margin:15px 0;
+    font-size:18px;
+}
+
 /* WHATSAPP */
+
 .whatsapp{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
     background:#25D366;
     color:white;
-    padding:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     border-radius:50%;
+    font-size:28px;
     text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
 }
 
 /* FOOTER */
+
 footer{
     background:var(--primary);
     color:white;
     text-align:center;
     padding:30px;
-
+    font-size:14px;
 }
 
-.foto{
-    width:100%;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+/* RESPONSIVE */
 
-.foto:hover{
-    transform:scale(1.05);
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
 }
 
 </style>
@@ -183,103 +292,177 @@ footer{
 
 <body>
 
+<!-- NAV -->
+
 <nav>
-<div><strong>RISKON</strong></div>
-<div>
-<a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
-<a href="#contacto">Contacto</a>
-</div>
+
+<div class="logo">RISKON 360</div>
+
+<ul>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#beneficios">Beneficios</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
-<div class="overlay"></div>
 
 <div class="hero-content">
+
 <h1>RISKON 360 SOLUTIONS</h1>
-<p>Transformamos la seguridad laboral en una ventaja competitiva</p>
+
+<p>
+Especialistas en Seguridad y Salud en el Trabajo.
+Protegemos vidas, reducimos riesgos y fortalecemos empresas.
+</p>
+
 <a href="#contacto" class="btn">Solicitar asesoría</a>
+
 </div>
+
 </section>
+
+<!-- NOSOTROS -->
 
 <section id="nosotros">
-<h2>¿Quiénes somos?</h2>
-<p class="text">
-Somos especialistas en Seguridad y Salud en el Trabajo, enfocados en proteger vidas y mejorar la productividad empresarial mediante soluciones estratégicas y personalizadas.
+
+<div class="container">
+
+<h2 class="section-title">¿Quiénes Somos?</h2>
+
+<p class="section-text">
+Somos una empresa especializada en Seguridad y Salud en el Trabajo (SST),
+comprometida con el bienestar laboral y el cumplimiento normativo.
+Brindamos soluciones estratégicas y acompañamiento profesional para
+mejorar la seguridad, productividad y sostenibilidad de las organizaciones.
 </p>
+
+</div>
+
 </section>
 
-<section>
-<h2>¿Por qué elegirnos?</h2>
+<!-- BENEFICIOS -->
+
+<section id="beneficios">
+
+<div class="container">
+
+<h2 class="section-title">¿Por Qué Elegirnos?</h2>
+
 <div class="benefits">
 
 <div class="benefit">
-<h3>✔ Cumplimiento legal</h3>
-<p>Garantizamos que tu empresa cumpla con la normativa SST.</p>
+<h3>✔ Cumplimiento Legal</h3>
+<p>
+Implementamos procesos alineados con la normativa vigente en SST.
+</p>
 </div>
 
 <div class="benefit">
-<h3>✔ Reducción de riesgos</h3>
-<p>Disminuimos accidentes laborales y pérdidas económicas.</p>
+<h3>✔ Reducción de Riesgos</h3>
+<p>
+Disminuimos accidentes y fortalecemos la prevención laboral.
+</p>
 </div>
 
 <div class="benefit">
-<h3>✔ Mayor productividad</h3>
-<p>Ambientes seguros generan mejores resultados.</p>
+<h3>✔ Mayor Productividad</h3>
+<p>
+Los ambientes seguros generan equipos más eficientes y motivados.
+</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
 
+<!-- SERVICIOS -->
+
 <section id="servicios">
-<h2>Servicios</h2>
-<div class="grid">
+
+<div class="container">
+
+<h2 class="section-title">Nuestros Servicios</h2>
+
+<div class="services">
 
 <div class="card">
 <h3>Asesoría SST</h3>
-<p>Implementación completa del sistema SST.</p>
+<p>
+Diseño e implementación completa del Sistema de Gestión SST.
+</p>
 </div>
 
 <div class="card">
-<h3>Capacitación</h3>
-<p>Formación práctica para trabajadores.</p>
+<h3>Capacitaciones</h3>
+<p>
+Formación práctica y profesional para trabajadores y empresas.
+</p>
 </div>
 
 <div class="card">
-<h3>Acompañamiento</h3>
-<p>Seguimiento continuo.</p>
+<h3>Inspecciones</h3>
+<p>
+Evaluación de riesgos y acompañamiento técnico especializado.
+</p>
+</div>
+
+<div class="card">
+<h3>Auditorías</h3>
+<p>
+Verificación de cumplimiento y mejora continua en SST.
+</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section id="galeria">
-<h2>Nuestro trabajo en campo</h2>
-
-<div class="grid">
-<img src="imagenes/img1.jpg" class="foto">
-<img src="imagenes/img2.jpg" class="foto">
-<img src="imagenes/img3.jpg" class="foto">
-<img src="imagenes/img4.jpg" class="foto">
-</div>
-
-</section>
-
-
-
+<!-- CONTACTO -->
 
 <section id="contacto">
-<h2>Contacto</h2>
-<p class="text">
-📞 +57 300 000 0000
-</p>
+
+<div class="container">
+
+<h2 class="section-title">Contáctanos</h2>
+
+<div class="contact-box">
+
+<p>📞 +57 312 679 2519</p>
+
+<p>📧 laurasernasst@gmail.com</p>
+
+<p>📍 Medellín - Colombia</p>
+
+<a href="https://wa.me/573126792519" class="btn">
+Hablar por WhatsApp
+</a>
+
+</div>
+
+</div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-© 2026 RISKON 360 SOLUTIONS
+© 2026 RISKON 360 SOLUTIONS | Todos los derechos reservados
 </footer>
 
-<a href="https://wa.me/573000000000" class="whatsapp">💬</a>
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/573126792519" class="whatsapp">
+💬
+</a>
 
 </body>
 </html>
